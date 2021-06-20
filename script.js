@@ -1,20 +1,20 @@
-function compute()
+function computeInt()
 {
     //p = document.getElementById("principal").value;
-    var principal = document.getElementById("principal").value;
+    var principal = parseFloat(document.getElementById("principal").value);
 
-    var rate = document.getElementById("rate").value;
+    var rate = parseFloat(document.getElementById("rate").value);
 
-    var years = document.getElementById("years").value;
+    var years = parseFloat(document.getElementById("years").value);
 
     var interest = principal * years * rate /100;
 
     var year = new Date().getFullYear()+parseInt(years);
 
-    document.getElementById("result").innerHTML="If you deposit "+principal+
-    ",\<br\>at an interest rate of "+rate+
-    "%\<br\>You will receive an amount of "+amount+
-    ",\<br\>in the year "+year+"\<br\>"
+    document.getElementById("result").innerHTML="If you deposit <mark><b>"+principal+
+    "</b></mark>,\<br\>at an interest rate of <mark><b>"+rate+
+    "%</b></mark>\<br\>You will receive an amount of <mark><b>"+interest+
+    "</b></mark>,\<br\>in the year <mark><b>"+year+"</b></mark>\<br\>"
 
     
 }
@@ -30,7 +30,7 @@ function checkdata()
 {
     var princi = document.getElementById("principal").value;
     if(princi==0 || princi<0){
-        alert("Enter a positive number !");
+        alert("Enter a positive number");
         princi.focus();
         return false;
     }
